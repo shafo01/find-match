@@ -1,0 +1,322 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: #247859;
+}
+
+body {
+    background: #F6F3F1;
+    //background: #ffffff url('../img/geometry2.png');
+    /* Background pattern from Subtle Patterns */
+    font-family: 'Coda', cursive;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    /*font-family: 'Open Sans', sans-serif;*/
+    text-align: center;
+
+}
+
+/*
+ * Styles for the deck of cards
+ */
+
+/*
+* Read tutorial from https://3dtransforms.desandro.com/card-flip to learn how to flip the cards
+*/
+
+.scoreboard {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 2fr 1.5fr 1fr;
+    grid-template-rows: 1fr 0.5fr;
+    grid-gap: 0.25em;
+    font-size: 1em;
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+.stars {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+.star {
+    color: #FFD700;
+    font-size: 1.5em;
+    text-shadow: -1px 0 #FFD700, 0 1px black, 1px 0 black, 0 -1px #FFD700;
+}
+
+.replay {
+    font-size: 1.5em;
+    color: #247859;
+    border: none;
+    background: #F6F3F1;
+    padding: 0 0;
+    cursor: pointer;
+    text-shadow: -1px 0 #247859, 0 1px #247859, 1px 0 #247859, 0 -1px #247859;
+}
+
+.table {
+    display: grid;
+    justify-content: center;
+
+}
+
+.board {
+    width: 20.5em;
+    height: 20.5em;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-gap: 0.5em;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: auto auto auto auto;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background: #247859;
+    grid-column: 1/1;
+    grid-row: 1/1;
+}
+
+.card-holder {
+    width: 4.5em;
+    height: 4.5em;
+    -webkit-perspective: 600px;
+    /* Safari 4-8 */
+    perspective: 600px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+
+}
+
+
+
+.card__face {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    font-size: 3em;
+    border-radius: 3px;
+
+}
+
+.card__face--front {
+    background: #F6F3F1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card__face--back {
+    background: #F6F3F1;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #247859;
+
+}
+
+
+.card.is-flipped {
+
+    animation-name: flip360;
+    animation-duration: 1s;
+
+}
+
+.card.final-flip {
+
+    transform: rotateY(180deg);
+    animation-name: flip180;
+    animation-duration: 1s;
+}
+
+
+
+@keyframes flip180 {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    25% {
+        transform: rotateY(180deg);
+    }
+
+    100% {
+        transform: rotateY(180deg);
+    }
+}
+
+
+
+
+@keyframes flip360 {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    25% {
+        transform: rotateY(180deg);
+    }
+
+    70% {
+        transform: rotateY(180deg);
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+/**** Winning Displays ****/
+.winningMat {
+    width: 20.5em;
+    height: 20.5em;
+    grid-column: 1/1;
+    grid-row: 1/1;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+
+
+}
+
+.winningMat__banner {
+    text-align: center;
+}
+
+.winningMat__youwin,
+.winningMat__token {
+    font-size: 3em;
+}
+
+.winningMat__youwin {
+
+    margin: 0px;
+    color: #247859;
+}
+
+
+.winningMat__token {
+
+    padding: 0.25em;
+}
+
+.winningMat__playback {
+    font-size: 1.5em;
+    color: #247859;
+    text-decoration: none;
+}
+
+.winningMat__playback:hover {
+    text-decoration: underline;
+}
+
+/***effects **/
+.blur {
+    opacity: 0.3;
+}
+
+.hide {
+    z-index: -1;
+}
+
+.show {
+    z-index: 1;
+}
+
+/* Responsive */
+@media only screen and (min-width: 620px) and (max-width: 768px) {
+    .board {
+        width: 41em;
+        height: 41em;
+    }
+
+
+    .card-holder {
+        width: 9em;
+        height: 9em;
+    }
+
+    .card__face {
+        font-size: 6em;
+    }
+
+    .winningMat {
+        width: 41em;
+        height: 41em;
+    }
+
+    .winningMat__youwin,
+    .winningMat__token {
+        font-size: 4.5em;
+    }
+
+    .winningMat__playback {
+        font-size: 2.75em;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    .board {
+        width: 46em;
+        height: 46em;
+    }
+
+    .card-holder {
+        width: 10em;
+        height: 10em;
+    }
+
+    .card__face {
+        font-size: 7em;
+    }
+
+    .winningMat {
+        width: 46em;
+        height: 46em;
+    }
+
+    .winningMat__youwin,
+    .winningMat__token {
+        font-size: 5em;
+    }
+
+    .winningMat__playback {
+        font-size: 3em;
+    }
+}
