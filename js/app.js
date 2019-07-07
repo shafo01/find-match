@@ -296,7 +296,6 @@ const star = (function() {
 
     function resetStars() {
         let starElements = document.getElementsByClassName('star');
-        console.log(starElements);
         for (aStar of starElements) {
             aStar.classList.remove('blur');
         }
@@ -509,7 +508,6 @@ const card = (function() {
         //alert(card.getAttribute("matched"));
 
         let alreadyMatched = card.getAttribute("matched");
-        console.log(alreadyMatched);
 
         if (alreadyMatched == '1' || card.id === firstCardId) {
             return;
