@@ -1,10 +1,12 @@
 html {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
 *,
 *::before,
 *::after {
+    -webkit-box-sizing: inherit;
     box-sizing: inherit;
 }
 
@@ -18,35 +20,40 @@ body {
 }
 
 body {
-    background: #F6F3F1;
-    //background: #ffffff url('../img/geometry2.png');
-    /* Background pattern from Subtle Patterns */
+    background: #f6f3f1;
     font-family: 'Coda', cursive;
 }
 
 .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
 }
 
 h1 {
-    /*font-family: 'Open Sans', sans-serif;*/
     text-align: center;
-
 }
 
 /*
  * Styles for the deck of cards
  */
-
 /*
-* Read tutorial from https://3dtransforms.desandro.com/card-flip to learn how to flip the cards
+* I had follow along a tutorial on how to flip a card from https://3dtransforms.desandro.com/card-flip to learn how to flip the cards
 */
-
-.scoreboard {
+.score-board {
     display: grid;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     grid-template-columns: 1fr 2fr 1.5fr 1fr;
     grid-template-rows: 1fr 0.5fr;
@@ -58,23 +65,26 @@ h1 {
 
 .stars {
     display: grid;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     grid-template-columns: 1fr 1fr 1fr;
-
 }
 
 .star {
-    color: #FFD700;
+    color: #ffd700;
     font-size: 1.5em;
-    text-shadow: -1px 0 #FFD700, 0 1px black, 1px 0 black, 0 -1px #FFD700;
+    text-shadow: -1px 0 #ffd700, 0 1px black, 1px 0 black, 0 -1px #ffd700;
 }
 
 .replay {
     font-size: 1.5em;
     color: #247859;
     border: none;
-    background: #F6F3F1;
+    background: #f6f3f1;
     padding: 0 0;
     cursor: pointer;
     text-shadow: -1px 0 #247859, 0 1px #247859, 1px 0 #247859, 0 -1px #247859;
@@ -82,20 +92,25 @@ h1 {
 
 .table {
     display: grid;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
-
 }
 
 .board {
     width: 20.5em;
     height: 20.5em;
     display: grid;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -ms-flex-line-pack: center;
     align-content: center;
     grid-gap: 0.5em;
     grid-template-rows: auto auto auto auto;
     grid-template-columns: auto auto auto auto;
     border-radius: 3px;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     background: #247859;
     grid-column: 1/1;
@@ -106,7 +121,6 @@ h1 {
     width: 4.5em;
     height: 4.5em;
     -webkit-perspective: 600px;
-    /* Safari 4-8 */
     perspective: 600px;
 }
 
@@ -114,139 +128,191 @@ h1 {
     width: 100%;
     height: 100%;
     position: relative;
+    -webkit-transition: -webkit-transform 1s;
+    transition: -webkit-transform 1s;
     transition: transform 1s;
+    transition: transform 1s, -webkit-transform 1s;
+    -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     cursor: pointer;
-
 }
-
-
 
 .card__face {
     position: absolute;
     height: 100%;
     width: 100%;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     font-size: 3em;
     border-radius: 3px;
-
 }
 
 .card__face--front {
-    background: #F6F3F1;
+    background: #f6f3f1;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
-
 }
 
 .card__face--back {
-    background: #F6F3F1;
+    background: #f6f3f1;
+    -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     color: #247859;
-
 }
 
-
 .card.is-flipped {
-
+    -webkit-animation-name: flip360;
     animation-name: flip360;
+    -webkit-animation-duration: 1s;
     animation-duration: 1s;
-
 }
 
 .card.final-flip {
-
+    -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
+    -webkit-animation-name: flip180;
     animation-name: flip180;
+    -webkit-animation-duration: 1s;
     animation-duration: 1s;
 }
 
-
-
-@keyframes flip180 {
+@-webkit-keyframes flip180 {
     0% {
+        -webkit-transform: rotateY(0deg);
         transform: rotateY(0deg);
     }
 
     25% {
+        -webkit-transform: rotateY(180deg);
         transform: rotateY(180deg);
     }
 
     100% {
+        -webkit-transform: rotateY(180deg);
         transform: rotateY(180deg);
     }
 }
 
-
-
-
-@keyframes flip360 {
+@keyframes flip180 {
     0% {
+        -webkit-transform: rotateY(0deg);
         transform: rotateY(0deg);
     }
 
     25% {
+        -webkit-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+    }
+
+    100% {
+        -webkit-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+    }
+}
+
+@-webkit-keyframes flip360 {
+    0% {
+        -webkit-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+    }
+
+    25% {
+        -webkit-transform: rotateY(180deg);
         transform: rotateY(180deg);
     }
 
     70% {
+        -webkit-transform: rotateY(180deg);
         transform: rotateY(180deg);
     }
 
     100% {
+        -webkit-transform: rotateY(360deg);
         transform: rotateY(360deg);
     }
 }
 
-/**** Winning Displays ****/
-.winningMat {
+@keyframes flip360 {
+    0% {
+        -webkit-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+    }
+
+    25% {
+        -webkit-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+    }
+
+    70% {
+        -webkit-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+    }
+
+    100% {
+        -webkit-transform: rotateY(360deg);
+        transform: rotateY(360deg);
+    }
+}
+
+/**** Styles for Winning Display ****/
+.winning-mat {
     width: 20.5em;
     height: 20.5em;
     grid-column: 1/1;
     grid-row: 1/1;
     display: grid;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -ms-flex-line-pack: center;
     align-content: center;
-
-
 }
 
-.winningMat__banner {
+.winning-mat__banner {
     text-align: center;
 }
 
-.winningMat__youwin,
-.winningMat__token {
+.winning-mat__youwin,
+.winning-mat__token {
     font-size: 3em;
 }
 
-.winningMat__youwin {
-
+.winning-mat__youwin {
     margin: 0px;
     color: #247859;
 }
 
-
-.winningMat__token {
-
+.winning-mat__token {
     padding: 0.25em;
 }
 
-.winningMat__playback {
+.winning-mat__playback {
     font-size: 1.5em;
     color: #247859;
     text-decoration: none;
 }
 
-.winningMat__playback:hover {
+.winning-mat__playback:hover {
     text-decoration: underline;
 }
 
-/***effects **/
+/*** General effects **/
 .blur {
     opacity: 0.3;
 }
@@ -266,7 +332,6 @@ h1 {
         height: 41em;
     }
 
-
     .card-holder {
         width: 9em;
         height: 9em;
@@ -276,17 +341,17 @@ h1 {
         font-size: 6em;
     }
 
-    .winningMat {
+    .winning-mat {
         width: 41em;
         height: 41em;
     }
 
-    .winningMat__youwin,
-    .winningMat__token {
+    .winning-mat__youwin,
+    .winning-mat__token {
         font-size: 4.5em;
     }
 
-    .winningMat__playback {
+    .winning-mat__playback {
         font-size: 2.75em;
     }
 }
@@ -306,17 +371,17 @@ h1 {
         font-size: 7em;
     }
 
-    .winningMat {
+    .winning-mat {
         width: 46em;
         height: 46em;
     }
 
-    .winningMat__youwin,
-    .winningMat__token {
+    .winning-mat__youwin,
+    .winning-mat__token {
         font-size: 5em;
     }
 
-    .winningMat__playback {
+    .winning-mat__playback {
         font-size: 3em;
     }
 }
