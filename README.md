@@ -12,6 +12,10 @@ Run this game from index.html.
 
 To view the documentation for the documentation go to js/out and click to view the index.html page in a browser of your choice. Jsdoc was used to generate the documentation for the javascript file.
 
+Gulp was used to add the prefix to the css properties. The prefixes such as -web-kit are used for cross browser compatibility.
+
+So far this app was mostly tested in chrome browser on a mac air pc.
+
 
 
 ## Acknowledgement:
