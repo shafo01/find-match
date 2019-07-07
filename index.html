@@ -2,19 +2,19 @@
 <html lang="en">
 
 <head>
-    <meta content="text/html" charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matching Game</title>
+    <title>Find & Match</title>
     <meta name="description" content="">
     <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
-    <link rel="stylesheet" href="css/app2.css">
+    <link rel="stylesheet" href="css/app.css">
 </head>
 
 <body>
     <div class="container">
         <header>
             <h1>Flip & Match</h1>
-            <section class="scoreboard">
+            <section class="score-board">
                 <h3> Moves </h3>
                 <h3> Stars </h3>
                 <h3> Seconds </h3>
@@ -25,7 +25,6 @@
                     <span id="star2" class="star"> ★ </span>
                     <span id="star3" class="star"> ★ </span>
                 </span>
-                </span>
                 <span id="seconds"> 0 </span>
                 <button id="replay" class="replay"> ⟳ </button>
             </section>
@@ -33,15 +32,14 @@
         <div class="table">
             <div id="board" class="board">
             </div>
-            <div id="winningMat" class="winningMat hide">
-                <section class="winningMat__banner">
-                    <h1 class="winningMat__youwin"> You Win! </h1>
-                    <div id="winningMat__token" class="winningMat__token"> 🌻 🌻 🌻</div>
-                    <a href="index.html" class="winningMat__playback"> Play Again </a>
+            <div id="winningMat" class="winning-mat hide">
+                <section class="winning-mat__banner">
+                    <h2 class="winning-mat__youwin"> You Win! </h2>
+                    <div id="winningMat__token" class="winning-mat__token"> 🌻 🌻 🌻</div>
+                    <a href="index.html" class="winning-mat__playback"> Play Again </a>
                     <div id="winningMat__stars"> </div>
                     <div id="winningMat__moves"> </div>
                     <div id="winningMat__seconds"> </div>
-
                 </section>
             </div>
         </div>
