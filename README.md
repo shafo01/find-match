@@ -37,6 +37,7 @@ To view the documentation for the documentation go to js/out and click to view t
 
 Clone a copy from github at https://github.com/shafo01/find-match.git
 
+<a name="implementation-specifics"></a>
 ## Implementation Specifics
 
 This game was created with Vanilla JavaScript, html and css. 
