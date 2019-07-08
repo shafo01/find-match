@@ -8,7 +8,7 @@
 
 ## Instructions
 
-Run this game from index.html.
+Run this game from index.html or on github through https://shafo01.github.io/find-match/
 
 To view the documentation for the documentation go to js/out and click to view the index.html page in a browser of your choice. Jsdoc was used to generate the documentation for the javascript file.
 
