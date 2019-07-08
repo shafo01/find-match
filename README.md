@@ -48,6 +48,8 @@ Code fonts from https://fonts.googleapis.com/css?family=Coda was used as the fon
 
 Gulp was used to add the prefix to the css properties. The prefixes such as -web-kit are used for cross browser compatibility.
 
+Follow jsDoc tags and syntax for commenting. JsDoc (https://github.com/jsdoc/jsdoc) was used to automatically generate the documentation. To automatically generate the documentation use your terminal/ command prompt to cd into the js folder and type the command 'jsdoc app.js' . If no error, an out folder should have been automatically generated. To view the documentation go into the out folder and open index.html in your browser. 
+
 <a name="user-testing"></a>
 ## User Testing
 
