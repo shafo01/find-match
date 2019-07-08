@@ -31,7 +31,7 @@ After matching all of the cards you would have successfully completed the game!!
 
 ### JS Documentation
 
-To view the documentation for the documentation go to js/out and click to view the index.html page in a browser of your choice. Jsdoc was used to generate the documentation for the javascript file.
+To view the documentation for the JavaScript file go to js/out and click to view the index.html page in a browser of your choice. Jsdoc was used to generate the documentation for the javascript file.
 
 ### Getting Started
 
