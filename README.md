@@ -5,9 +5,9 @@ This is a classic concentration game. There are a matching pair of cards. The pl
 ## Table of Contents
 
 * [Instructions](#instructions)
-* [Implementation Specifics] (#implementation-specifics)
-* [User Testing] (#user-testing)
-* [Author] (#author)
+* [Implementation Specifics](#implementation-specifics)
+* [User Testing](#user-testing)
+* [Author](#author)
 * [Acknowledgement](#acknowledgement)
 
 ## Instructions
@@ -48,6 +48,7 @@ Code fonts from https://fonts.googleapis.com/css?family=Coda was used as the fon
 
 Gulp was used to add the prefix to the css properties. The prefixes such as -web-kit are used for cross browser compatibility.
 
+<a name="user-testing"></a>
 ## User Testing
 
 So far this app was mostly tested in chrome browser on a MacBook air pc.
