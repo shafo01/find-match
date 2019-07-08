@@ -7,12 +7,7 @@
  * @global
  */
 
-const flowers = ['🌹', '🌼',
-    '🌻', '🌺', '🏵', '🌸',
-    '🌻', '🌺', '🍀', '🌷',
-    '🌷', '🍀', '🌸', '🏵',
-    '🌼', '🌹'
-];
+const flowers = ['🌹', '🌼', '🌻', '🌺', '🏵', '🌸', '🌻', '🌺', '🍀', '🌷', '🌷', '🍀', '🌸', '🏵', '🌼', '🌹'];
 
 /**
  * Keep track on whether the app was started or not
@@ -107,7 +102,7 @@ const ultility = (function() {
      * @function
      */
     function shuffle(array) {
-        var currentIndex = array.length,
+        let currentIndex = array.length,
             temporaryValue, randomIndex;
 
         while (currentIndex !== 0) {
@@ -446,6 +441,9 @@ const card = (function() {
             flipBackBoth = false;
         } else {
             //second move of the pair
+            //when a pair of card is flipped the number of moves is updated
+            move.addMove();
+            move.updateMoves();
             //compare card to the first card of the pair
             let firstCard = document.getElementById(firstCardId);
             if (firstCard.getAttribute("value") === card.getAttribute("value")) {
@@ -513,8 +511,8 @@ const card = (function() {
             return;
         }
 
-        move.addMove();
-        move.updateMoves();
+        //move.addMove();
+        //move.updateMoves();
 
         if (firstMove) {
             card.classList.add('final-flip');
