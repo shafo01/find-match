@@ -5,8 +5,8 @@ This is a classic concentration game. There are a matching pair of cards. The pl
 ## Table of Contents
 
 * [Instructions](#instructions)
-* [Implementation Specifics] (#implementation specifics)
-* [User Testing] (#user testing)
+* [Implementation Specifics] (#implementation-specifics)
+* [User Testing] (#user-testing)
 * [Author] (#author)
 * [Acknowledgement](#acknowledgement)
 
@@ -37,7 +37,7 @@ To view the documentation for the documentation go to js/out and click to view t
 
 Clone a copy from github at https://github.com/shafo01/find-match.git
 
-## Implementation-Specifics
+## Implementation Specifics
 
 This game was created with Vanilla JavaScript, html and css. 
 
@@ -47,7 +47,7 @@ Code fonts from https://fonts.googleapis.com/css?family=Coda was used as the fon
 
 Gulp was used to add the prefix to the css properties. The prefixes such as -web-kit are used for cross browser compatibility.
 
-## User-Testing
+## User Testing
 
 So far this app was mostly tested in chrome browser on a MacBook air pc.
 
