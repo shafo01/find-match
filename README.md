@@ -12,10 +12,12 @@ This is a classic concentration game. There are a matching pair of cards. The pl
 
 ## Instructions
 
-### Prerequisites
+### Prerequisites:
+
 You need to have a browser, such as Chrome, to run this game.
 
-### To play the Game
+### To play the Game:
+
 Run this game from index.html or on github through https://shafo01.github.io/find-match/.
 
 To start playing the game click on a card. This will start the timer. Don't worry, the timer just keep track of the number of seconds since you started playing the game. 
@@ -32,6 +34,7 @@ After matching all of the cards you would have successfully completed the game!!
 To view the documentation for the documentation go to js/out and click to view the index.html page in a browser of your choice. Jsdoc was used to generate the documentation for the javascript file.
 
 ### Getting Started
+
 Clone a copy from github at https://github.com/shafo01/find-match.git
 
 ## Implementation Specifics
@@ -49,6 +52,7 @@ Gulp was used to add the prefix to the css properties. The prefixes such as -web
 So far this app was mostly tested in chrome browser on a MacBook air pc.
 
 ## Author
+
 Shafeeza Hussain
 
 ## Acknowledgement:
