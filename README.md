@@ -42,6 +42,14 @@ Clone a copy from github at https://github.com/shafo01/find-match.git
 
 This game was created with Vanilla JavaScript, html and css. 
 
+Udacity style guides were followed for:
+
+HTML: http://udacity.github.io/frontend-nanodegree-styleguide/index.html
+
+CSS: http://udacity.github.io/frontend-nanodegree-styleguide/css.html
+
+JavaScript: http://udacity.github.io/frontend-nanodegree-styleguide/javascript.html
+
 Code fonts from https://fonts.googleapis.com/css?family=Coda was used as the fonts.
 
  Unicode characters were used so the client doesn't have to download the images. This improve loading time - less data has to be downloaded.The Unicode characters are displayed differently on different devices. This is a positive for uniqueness but a negative for consistency in design and experience.
